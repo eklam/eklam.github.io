@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Renan Stigliani">
+    <meta name="description" content="Renan's personal website.">
+
+    <title>Renan Stigliani</title>
+
+    <style>
+        :root {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            --darkest: #232133;
+            --dark: #2D4263;
+            --accent1: #df715b;
+            --accent2: #f7dca3;
+            --text: #f3f8ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+        }
+
+        body>*:not(nav) {
+            padding-left: 30vw;
+            padding-top: 2rem;
+            padding-bottom: 0rem;
+            padding-right: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav a {
+            color: var(--accent1);
+        }
+
+        nav {
+            background-color: var(--darkest);
+            position: fixed;
+            width: 100%;
+
+            display: flex;
+        }
+
+        nav>ul,
+        nav>a {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem;
+            flex: 1;
+        }
+
+        nav>ul>li {
+            display: inline-block;
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        header {
+            /* double the other elements to account for nav */
+            padding-top: 5rem !important;
+            /* background-color: beige; */
+        }
+
+        main {
+            /* background-color: aquamarine; */
+        }
+
+        h1,
+        h2 {
+            letter-spacing: 2px;
+        }
+
+        em {
+            color: var(--accent2);
+        }
+
+        section {
+            margin: 1rem 0;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cards>section {
+            width: 100%;
+            flex: 50%;
+        }
+
+        .keywords>span {
+            font-size: 80%;
+            font-family: 'Courier New', Courier, monospace;
+            padding-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <ul>
+            <li></li>
+            <li><a href="#about">Projects</a></li>
+            <li><a href="#resume">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1 id="home">Renan Stigliani</h1>
+        <em>full-stack developer</em>
+        <section>
+            <p>
+                Hello! I am a full-stack software engineer with several years of experience in many types of Web
+                Applications. I have sound knowledge of .NET & related, modern front-end frameworks, familiarity with UX
+                best practices and good grasp of AI and Machine Learning techniques.
+            </p>
+        </section>
+    </header>
+    <main>
+        <section>
+            <h2>Personal Projects</h2>
+
+            <div class="cards">
+                <section>
+                    <h4>fables.ink</h4>
+                    <p>
+                        RPG platform for players to consume materials in an integrated online
+                        marketplace.
+                    </p>
+                    <div class="keywords">
+                        <span>TypeScript</span>
+                        <span>ReactJS</span>
+                        <span>NodeJS</span>
+                        <span>GraphQL</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </section>
+                <section>
+                    <h4>rival.ai</h4>
+                    <p>
+                        Engine aimed to gather real-time information from gaming streams.
+                    </p>
+                    <div class="keywords">
+                        <span>Computer Vision</span>
+                        <span>Machine Learning</span>
+                        <span>Tesseract OCR</span>
+                        <span>Scikit-learn</span>
+                    </div>
+                </section>
+                <section>
+                    <h4>Traveling Salesman Problem Optimization</h4>
+                    <p>Thesys project on optimising the famous NP-hard problem.</p>
+                    <div class="keywords">
+                        <span>Academic</span>
+                        <span>Problem Optimization</span>
+                        <span>Simmulated Annealing</span>
+                    </div>
+                </section>
+                <section>
+                    <h4>fun & games</h4>
+                    <p>
+                        Check other random projects on my GitHub repo
+                    </p>
+                </section>
+            </div>
+        </section>
+        <section>
+            <h2 id="resume">Work Experience</h2>
+            <em>fables.ink</em>
+
+            <section>
+                <h4>Clearance</h4>
+                <p>
+                    Team lead & principal developer for a new system that controls ads clearance for TV commercials; I
+                    on developing a solution on par with established competitors in the field; while at the same time
+                    overviewing the development process and maintaining software quality.
+                </p>
+                <div class="keywords">
+                    <span>Computer Vision</span>
+                    <span>Machine Learning</span>
+                    <span>Tesseract OCR</span>
+                    <span>Scikit-learn</span>
+                </div>
+            </section>
+
+            <section>
+                <h4>Clearance</h4>
+                <p>
+                    team lead and principal developer for PGA's revamped Certification and Submission site. The
+                    application unifies several workflows aiming to certify film producers with the Guild's mark, as
+                    well as redaction and arbitration tools for auditing and reviewing the whole process;
+                </p>
+                <div class="keywords">
+                    <span>Computer Vision</span>
+                    <span>Machine Learning</span>
+                    <span>Tesseract OCR</span>
+                    <span>Scikit-learn</span>
+                </div>
+            </section>
+
+            <section>
+                <h4>Media Processing and Streaming</h4>
+                <p>
+                    I redesigned the media processing and streaming pipeline for the award shows.
+                </p>
+                <div class="keywords">
+                    <span>Computer Vision</span>
+                    <span>Machine Learning</span>
+                    <span>Tesseract OCR</span>
+                    <span>Scikit-learn</span>
+                </div>
+            </section>
+
+            <section>
+                <h4>Media Processing and Streaming</h4>
+                <p>
+                    I redesigned the media processing and streaming pipeline for the award shows.
+                </p>
+                <div class="keywords">
+                    <span>Computer Vision</span>
+                    <span>Machine Learning</span>
+                    <span>Tesseract OCR</span>
+                    <span>Scikit-learn</span>
+                </div>
+            </section>
+            <section>
+                <h4>Securities Lending Web Broker</h4>
+                <p>I led the development team of a Securities Lending Web Broker. I defined priorities with
+                    stakeholders, supervised other developers'tasks and took care of the system architecture</p>
+                <div class="keywords">
+                    <span>C#</span>
+                    <span>ASP.NET</span>
+                    <span>WCF</span>
+                    <span>EF</span>
+                    <span>SQL Server</span>
+                </div>
+            </section>
+
+            <section>
+                <section>
+                    <h4>Education & etc</h4>
+                    <ul>
+                        <li>
+                            Computer Engineer, Bachelor's degree - FACENS (Brazil)
+                        </li>
+                        <li>
+                            Data Structures Teaching Assistant
+                        </li>
+                    </ul>
+                </section>
+
+                <h4>Etc</h4>
+                <p>Independent coursework in AI, Data Science and Machine Learning, such as:</p>
+                <ul>
+                    <li>Mining Massive Data Sets - @Coursera</li>
+                    <li>Mining Massive Data Sets - @Coursera</li>
+                    <li>Computer Vision - @Udacity</li>
+                    <li>Intro to Machine Learning - @Udacity</li>
+                    <li>Artificial Intelligence for Robotics - @Udacity</li>
+                </ul>
+            </section>
+
+        </section>
+    </main>
+    <footer>
+        <h2 id="contacts">Contacts</h2>
+        <ul>
+            <li>coder.<strong>rms</strong>@gmail.com</li>
+            <li>Github</li>
+            <li>Linked-in</li>
+        </ul>
+    </footer>
+</body>
+
+</html>
