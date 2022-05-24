@@ -6,18 +6,23 @@
     <meta name="author" content="Renan Stigliani">
     <meta name="description" content="Renan's personal website.">
 
+    <link rel="icon" href="favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
     <title>Renan Stigliani</title>
 
+    <!-- Reset -->
     <style>
         :root {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-            --darkest: #232133;
-            --dark: #22324c;
-            --accent1: #e3813a;
-            --accent2: #e3cc3a;
+            --darkest: #0a192f;
+            --dark: #112240;
+            --accent: #ddab2e;
             --text: #f3f8ff;
+            --text2: #b9bfc9;
             --muted: #aeb4bd;
+            --border-radius: 6px;
         }
 
         * {
@@ -26,33 +31,89 @@
         }
 
         body {
-            /* background-color: var(--darkest); */
-            background-image: url(img.jpg);
-            background-size: 60vw;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position-x: -50px;
-            background-position-y: -250px;
-            color: var(--text);
+            background-color: var(--darkest);
+            color: var(--text2);
+            /* font-size: 16px; */
         }
 
         main {
-            margin-left: 44vw;
-            padding: 0rem 4rem 2rem;
+            margin: 0px auto;
+            width: 100%;
+            max-width: 1000px;
+
+            padding: 0rem 4rem;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        main,
+        footer {
+            background-color: var(--darkest);
+        }
+
+        main>section {
+            margin-bottom: 16rem;
+        }
+
+        main>section:last-child {
+            margin-bottom: 6rem;
+        }
+
+        main>section:first-child {
+            padding-top: 2rem;
+        }
+
+        section>section {
+            padding-top: 1rem;
+        }
+
+        .keywords>span {
+            font-size: 80%;
+            font-family: 'Courier New', Courier, monospace;
+            padding-right: 0.5rem;
+        }
+
+        .list>li {
+            list-style: inside;
         }
 
         a {
-            text-decoration: none;
+            color: var(--text2);
         }
-
         a:hover {
-            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+
+    <!-- Hero -->
+    <style>
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        nav a {
-            color: var(--accent1);
+        .hero>span {
+            font-size: 200%;
+            color: var(--muted);
         }
 
+        .hero>h1 {
+            margin-left: -6px;
+        }
+
+        .hero>p {
+            width: 50%;
+            line-height: 150%;
+            padding-bottom: 3rem;
+        }
+    </style>
+
+    <!-- Nav -->
+    <style>
         nav {
             position: sticky;
             left: 0;
@@ -66,34 +127,53 @@
 
             display: flex;
             justify-content: space-between;
+
+            font-size: 16px;
+            z-index: 1;
         }
+
+        nav a {
+            /* color: white; */
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            /* color: var(--accent); */
+            text-decoration: none;
+            background-color: var(--dark);
+        }
+
 
         nav>ul,
         nav>a {
             display: flex;
         }
 
-        nav>a {
-            padding: 1rem;
+        nav a {
+            padding: 2rem;
         }
 
         nav>ul {
             flex-shrink: 1;
         }
 
-        nav>ul>li {
+        nav a {
             display: inline-block;
-            padding: 1rem;
+        }
+    </style>
+
+    <!-- Elements -->
+    <style>
+        a {
+            text-decoration: none;
         }
 
-        li {
-            list-style: none;
+        a:hover {
+            text-decoration: underline;
         }
 
-        main,
-        footer {
-            background-color: var(--darkest);
-        }
 
         h1,
         h2 {
@@ -101,35 +181,33 @@
         }
 
         h1 {
-            font-size: 400%;
+            font-size: 500%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text);
         }
 
         em {
-            color: var(--accent1);
+            color: var(--accent);
             margin-bottom: 1rem;
         }
+    </style>
 
-        main>section {
-            margin-bottom: 2rem;
-        }
-
-        main>section:first-child {
-            padding-top: 2rem;
-        }
-
-        section>section {
-            padding-top: 1rem;
-        }
-
+    <!-- Cards -->
+    <style>
         .cards {
             display: grid;
-            grid-template-columns: 50% 50%;
+            grid-template-columns: 33% 33% 33%;
             grid-row: auto auto;
             grid-column-gap: 20px;
             grid-row-gap: 20px;
         }
-
-
 
         .card {
             /* width: calc(100% -40px);
@@ -144,7 +222,9 @@
             transition: top ease 0.5s;
 
             color: white;
-            
+
+            border-radius: var(--border-radius);
+
         }
 
         .card:hover {
@@ -168,11 +248,8 @@
             margin-bottom: 1rem;
         }
 
-
-
-
         .icon {
-            color: var(--accent2);
+            color: var(--accent);
             height: 36px;
             width: 36px;
             stroke-width: 1px;
@@ -194,18 +271,10 @@
             padding-top: 2rem;
             color: var(--muted);
         }
+    </style>
 
-        .keywords>span {
-            font-size: 80%;
-            font-family: 'Courier New', Courier, monospace;
-            padding-right: 0.5rem;
-        }
-
-        .list>li {
-            list-style: inside;
-        }
-
-
+    <!-- typewriter -->
+    <style>
         .typewriter {
             display: flex;
             align-items: center;
@@ -216,7 +285,7 @@
             max-width: max-content;
             overflow: hidden;
             border-right: .1em solid;
-            border-color: var(--accent1);
+            border-color: var(--accent);
             /* The typwriter cursor */
             white-space: nowrap;
             /* Keeps the content on a single line */
@@ -255,10 +324,11 @@
             }
 
             50% {
-                border-color: var(--accent1);
+                border-color: var(--accent);
             }
         }
     </style>
+
     <script defer>
         window.onload = function () {
             var messages = ["message1", "message2  message2 message2", "message3 message3"];
@@ -291,33 +361,51 @@
             }
         }
     </script>
+
+    <style>
+        .button {
+            padding: 1rem;
+            background-color: var(--darkest);
+            max-width: 200px;
+            text-align: center;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            border-radius: var(--border-radius);
+        }
+        .button:hover {
+            background-color: var(--dark);
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
     <nav>
-        <a href="#">Home</a>
+        <a href="/">Home</a>
         <ul>
-            <li><a href="#about">Projects</a></li>
-            <li><a href="#resume">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contacts">Contacts</a></li>
         </ul>
     </nav>
     <main>
-        <section>
-            <h1 id="home">Renan Stigliani</h1>
+        <section class="hero">
+            <span>Adapt. React. Readapt. Apt.</span>
+            <h1>Renan Stigliani</h1>
             <div class="typewriter">
                 <em class="typing-erase" data-text="full-stack developer,software engineer,programmer">
                     full-stack developer
                 </em>
             </div>
             <p>
-                Hello! I am a full-stack software engineer with several years of experience in many types of Web
-                Applications. I have sound knowledge of .NET & related, modern front-end frameworks, familiarity with UX
-                best practices and good grasp of AI and Machine Learning techniques.
+                I am a full-stack software engineer with years of experience in many types of web apps, sound knowledge of .NET & related, modern frameworks, UX and good grasp of AI and Machine Learning.
             </p>
+            <a href="#contacts" class="button">Contact Me</a>
         </section>
+
         <section>
-            <h2>Personal Projects</h2>
+            <h2 id="projects" style="text-align: center;padding-bottom: 1rem;">Personal Projects</h2>
+            <a style="display: block; text-align: center;padding-bottom: 4rem;">I have a couple other repos on <em>GitHub</em></a>
 
             <div class="cards">
                 <a href="https://fables.ink" target="_blank" class="card">
@@ -390,23 +478,13 @@
                                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
                                 </path>
                             </svg>
-
-                            <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-github icon-xs">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="feather feather-external-link icon-xs">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-github icon-xs">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
                         </div>
 
                         <h4>Traveling Salesman Problem Optimization</h4>
@@ -418,7 +496,7 @@
                         </div>
                     </section>
                 </a>
-                <a href="https://github.com/eklam" target="_blank" class="card">
+                <a href="https://github.com/eklam" target="_blank" class="card" hidden>
                     <section>
                         <div class="icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -429,10 +507,10 @@
                             </svg>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-external-link icon-xs">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                <polyline points="15 3 21 3 21 9"></polyline>
-                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                stroke-linejoin="round" class="feather feather-github icon-xs">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
                             </svg>
                         </div>
 
@@ -444,8 +522,9 @@
                 </a>
             </div>
         </section>
+
         <section>
-            <h2 id="resume">Work Experience</h2>
+            <h2 id="work">Work Experience</h2>
 
             <section>
                 <h4>Clearance</h4>
@@ -527,12 +606,13 @@
             </section>
 
         </section>
+
         <section>
             <h2 id="contacts">Contacts</h2>
             <ul>
                 <li><a href="mailto:coder.rms@gmail.com">coder.<strong>rms</strong>@gmail.com</a></li>
-                <li>Github</li>
-                <li>Linked-in</li>
+                <li><a href="https://github.com/eklam" target="_blank"></a>Github</li>
+                <li><a href="https://www.linkedin.com/in/rmalke" target="_blank">LinkedIn</a></li>
             </ul>
         </section>
     </main>
