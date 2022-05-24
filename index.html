@@ -13,10 +13,11 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
             --darkest: #232133;
-            --dark: #2D4263;
-            --accent1: #df715b;
-            --accent2: #f7dca3;
+            --dark: #22324c;
+            --accent1: #e3813a;
+            --accent2: #e3cc3a;
             --text: #f3f8ff;
+            --muted: #aeb4bd;
         }
 
         * {
@@ -25,15 +26,19 @@
         }
 
         body {
-            background-color: var(--dark);
+            /* background-color: var(--darkest); */
+            background-image: url(img.jpg);
+            background-size: 60vw;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: -50px;
+            background-position-y: -250px;
             color: var(--text);
         }
 
-        body>*:not(nav) {
-            padding-left: 30vw;
-            padding-top: 2rem;
-            padding-bottom: 0rem;
-            padding-right: 2rem;
+        main {
+            margin-left: 44vw;
+            padding: 0rem 4rem 2rem;
         }
 
         a {
@@ -49,38 +54,45 @@
         }
 
         nav {
+            position: sticky;
+            left: 0;
+            right: 0;
+            top: 0;
+
+            padding: 0 4rem;
+
             background-color: var(--darkest);
-            position: fixed;
-            width: 100%;
+            box-shadow: 0px 0px 30px -10px black;
 
             display: flex;
+            justify-content: space-between;
         }
 
         nav>ul,
         nav>a {
             display: flex;
-            justify-content: space-between;
-            padding: 0.5rem;
-            flex: 1;
+        }
+
+        nav>a {
+            padding: 1rem;
+        }
+
+        nav>ul {
+            flex-shrink: 1;
         }
 
         nav>ul>li {
             display: inline-block;
+            padding: 1rem;
         }
 
         li {
             list-style: none;
-
         }
 
-        header {
-            /* double the other elements to account for nav */
-            padding-top: 5rem !important;
-            /* background-color: beige; */
-        }
-
-        main {
-            /* background-color: aquamarine; */
+        main,
+        footer {
+            background-color: var(--darkest);
         }
 
         h1,
@@ -88,22 +100,99 @@
             letter-spacing: 2px;
         }
 
-        em {
-            color: var(--accent2);
+        h1 {
+            font-size: 400%;
         }
 
-        section {
-            margin: 1rem 0;
+        em {
+            color: var(--accent1);
+            margin-bottom: 1rem;
+        }
+
+        main>section {
+            margin-bottom: 2rem;
+        }
+
+        main>section:first-child {
+            padding-top: 2rem;
+        }
+
+        section>section {
+            padding-top: 1rem;
         }
 
         .cards {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-row: auto auto;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
         }
 
-        .cards>section {
-            width: 100%;
-            flex: 50%;
+
+
+        .card {
+            /* width: calc(100% -40px);
+            flex: 50%; */
+            padding: 2rem;
+
+            background-color: var(--dark);
+
+            position: relative;
+
+            top: 0;
+            transition: top ease 0.5s;
+
+            color: white;
+            
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px -15px black;
+            cursor: pointer;
+
+            top: -6px;
+
+            text-decoration: none;
+        }
+
+
+        .card .icons {
+            display: flex;
+            justify-content: space-between;
+
+            padding-bottom: 2rem;
+        }
+
+        .card h4 {
+            margin-bottom: 1rem;
+        }
+
+
+
+
+        .icon {
+            color: var(--accent2);
+            height: 36px;
+            width: 36px;
+            stroke-width: 1px;
+        }
+
+        .icon-xs {
+            color: var(--muted);
+            height: 18px;
+            width: 18px;
+            margin-left: 6px;
+        }
+
+        .feather-github {
+            height: 16px;
+            width: 16px;
+        }
+
+        .card .keywords {
+            padding-top: 2rem;
+            color: var(--muted);
         }
 
         .keywords>span {
@@ -111,81 +200,252 @@
             font-family: 'Courier New', Courier, monospace;
             padding-right: 0.5rem;
         }
+
+        .list>li {
+            list-style: inside;
+        }
+
+
+        .typewriter {
+            display: flex;
+            align-items: center;
+        }
+
+        .typewriter em {
+            width: 0;
+            max-width: max-content;
+            overflow: hidden;
+            border-right: .1em solid;
+            border-color: var(--accent1);
+            /* The typwriter cursor */
+            white-space: nowrap;
+            /* Keeps the content on a single line */
+            /* margin: 0;
+            Gives that scrolling effect as the typing happens */
+        }
+
+        .typing-erase {
+            animation:
+                4s typing-erase 4s steps(50, end),
+                blink-caret .5s step-end infinite;
+        }
+
+        /* The type and erase effect */
+        @keyframes typing-erase {
+            0% {
+                width: 0
+            }
+
+            80% {
+                width: 100%
+            }
+
+            90%,
+            100% {
+                width: 0
+            }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--accent1);
+            }
+        }
     </style>
+    <script defer>
+        window.onload = function () {
+            var messages = ["message1", "message2  message2 message2", "message3 message3"];
+
+            [...document.getElementsByClassName("typing-erase")].forEach((element) => {
+                element.onanimationend = changeTxt;
+            });
+
+            function changeTxt(event) {
+                const element = event.target;
+                // set element animation to none
+                element.style.animation = 'none';
+
+                const messages = element.dataset.text.split(',');
+
+                let rank = parseInt(element.dataset.rank, 10) || 0;
+                rank = rank + 1 >= messages.length ? 0 : rank + 1;
+
+                element.innerHTML = messages[rank];
+
+                // adjust the speed (3.5 is the original speed, 20 is the original string length
+                // var speed = 3.5 * messages[rank].length / 20;
+
+                setTimeout(() => {
+                    // switch to the original set of animation      
+                    element.style.animation = '';
+                }, 100);
+
+                element.dataset.rank = rank;
+            }
+        }
+    </script>
 </head>
 
 <body>
     <nav>
         <a href="#">Home</a>
         <ul>
-            <li></li>
             <li><a href="#about">Projects</a></li>
             <li><a href="#resume">Work</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <header>
-        <h1 id="home">Renan Stigliani</h1>
-        <em>full-stack developer</em>
+    <main>
         <section>
+            <h1 id="home">Renan Stigliani</h1>
+            <div class="typewriter">
+                <em class="typing-erase" data-text="full-stack developer,software engineer,programmer">
+                    full-stack developer
+                </em>
+            </div>
             <p>
                 Hello! I am a full-stack software engineer with several years of experience in many types of Web
                 Applications. I have sound knowledge of .NET & related, modern front-end frameworks, familiarity with UX
                 best practices and good grasp of AI and Machine Learning techniques.
             </p>
         </section>
-    </header>
-    <main>
         <section>
             <h2>Personal Projects</h2>
 
             <div class="cards">
-                <section>
-                    <h4>fables.ink</h4>
-                    <p>
-                        RPG platform for players to consume materials in an integrated online
-                        marketplace.
-                    </p>
-                    <div class="keywords">
-                        <span>TypeScript</span>
-                        <span>ReactJS</span>
-                        <span>NodeJS</span>
-                        <span>GraphQL</span>
-                        <span>PostgreSQL</span>
-                    </div>
-                </section>
-                <section>
-                    <h4>rival.ai</h4>
-                    <p>
-                        Engine aimed to gather real-time information from gaming streams.
-                    </p>
-                    <div class="keywords">
-                        <span>Computer Vision</span>
-                        <span>Machine Learning</span>
-                        <span>Tesseract OCR</span>
-                        <span>Scikit-learn</span>
-                    </div>
-                </section>
-                <section>
-                    <h4>Traveling Salesman Problem Optimization</h4>
-                    <p>Thesys project on optimising the famous NP-hard problem.</p>
-                    <div class="keywords">
-                        <span>Academic</span>
-                        <span>Problem Optimization</span>
-                        <span>Simmulated Annealing</span>
-                    </div>
-                </section>
-                <section>
-                    <h4>fun & games</h4>
-                    <p>
-                        Check other random projects on my GitHub repo
-                    </p>
-                </section>
+                <a href="https://fables.ink" target="_blank" class="card">
+                    <section>
+                        <div class="icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-folder icon">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-external-link icon-xs">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+
+                        <h4>fables.ink</h4>
+                        <p>
+                            RPG platform for players to consume materials in an integrated online
+                            marketplace.
+                        </p>
+                        <div class="keywords">
+                            <span>TypeScript</span>
+                            <span>React</span>
+                            <span>Node</span>
+                            <span>GraphQL</span>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://rival.ai" target="_blank" class="card">
+                    <section>
+                        <div class="icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-folder icon">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-external-link icon-xs">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+                        <h4>rival.ai</h4>
+                        <p>
+                            Engine aimed to gather real-time information from gaming streams.
+                        </p>
+                        <div class="keywords">
+                            <span>Computer Vision</span>
+                            <span>ML</span>
+                            <span>OCR</span>
+                            <span>Scikit-learn</span>
+                        </div>
+                    </section>
+                </a>
+                <a class="card">
+                    <section>
+                        <div class="icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-folder icon">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-github icon-xs">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-external-link icon-xs">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <h4>Traveling Salesman Problem Optimization</h4>
+                        <p>Thesis project on optimising the famous NP-hard problem.</p>
+                        <div class="keywords">
+                            <span>Academic</span>
+                            <span>Problem Optimization</span>
+                            <span>Simmulated Annealing</span>
+                        </div>
+                    </section>
+                </a>
+                <a href="https://github.com/eklam" target="_blank" class="card">
+                    <section>
+                        <div class="icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-folder icon">
+                                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z">
+                                </path>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-external-link icon-xs">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </div>
+
+                        <h4>fun & games</h4>
+                        <p>
+                            Check other random projects on my GitHub repo
+                        </p>
+                    </section>
+                </a>
             </div>
         </section>
         <section>
             <h2 id="resume">Work Experience</h2>
-            <em>fables.ink</em>
 
             <section>
                 <h4>Clearance</h4>
@@ -195,25 +455,26 @@
                     overviewing the development process and maintaining software quality.
                 </p>
                 <div class="keywords">
-                    <span>Computer Vision</span>
-                    <span>Machine Learning</span>
-                    <span>Tesseract OCR</span>
-                    <span>Scikit-learn</span>
+                    <span>Web App</span>
+                    <span>C#</span>
+                    <span>SQL</span>
+                    <span>Workflow</span>
+                    <span>UX</span>
                 </div>
             </section>
 
             <section>
-                <h4>Clearance</h4>
+                <h4>Producers Guild of America (PGA)</h4>
                 <p>
                     team lead and principal developer for PGA's revamped Certification and Submission site. The
                     application unifies several workflows aiming to certify film producers with the Guild's mark, as
                     well as redaction and arbitration tools for auditing and reviewing the whole process;
                 </p>
                 <div class="keywords">
-                    <span>Computer Vision</span>
-                    <span>Machine Learning</span>
-                    <span>Tesseract OCR</span>
-                    <span>Scikit-learn</span>
+                    <span>Web App</span>
+                    <span>C#</span>
+                    <span>SQL</span>
+                    <span>Workflow</span>
                 </div>
             </section>
 
@@ -223,25 +484,13 @@
                     I redesigned the media processing and streaming pipeline for the award shows.
                 </p>
                 <div class="keywords">
-                    <span>Computer Vision</span>
-                    <span>Machine Learning</span>
-                    <span>Tesseract OCR</span>
-                    <span>Scikit-learn</span>
+                    <span>Service</span>
+                    <span>API</span>
+                    <span>Transcoding</span>
+                    <span>Streaming</span>
                 </div>
             </section>
 
-            <section>
-                <h4>Media Processing and Streaming</h4>
-                <p>
-                    I redesigned the media processing and streaming pipeline for the award shows.
-                </p>
-                <div class="keywords">
-                    <span>Computer Vision</span>
-                    <span>Machine Learning</span>
-                    <span>Tesseract OCR</span>
-                    <span>Scikit-learn</span>
-                </div>
-            </section>
             <section>
                 <h4>Securities Lending Web Broker</h4>
                 <p>I led the development team of a Securities Lending Web Broker. I defined priorities with
@@ -256,21 +505,19 @@
             </section>
 
             <section>
-                <section>
-                    <h4>Education & etc</h4>
-                    <ul>
-                        <li>
-                            Computer Engineer, Bachelor's degree - FACENS (Brazil)
-                        </li>
-                        <li>
-                            Data Structures Teaching Assistant
-                        </li>
-                    </ul>
-                </section>
-
-                <h4>Etc</h4>
-                <p>Independent coursework in AI, Data Science and Machine Learning, such as:</p>
-                <ul>
+                <h4>Education</h4>
+                <ul class="list">
+                    <li>
+                        Computer Engineer, Bachelor's degree - FACENS (Brazil)
+                    </li>
+                    <li>
+                        Data Structures Teaching Assistant
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h4>Other</h4>
+                <ul class="list">
                     <li>Mining Massive Data Sets - @Coursera</li>
                     <li>Mining Massive Data Sets - @Coursera</li>
                     <li>Computer Vision - @Udacity</li>
@@ -280,15 +527,15 @@
             </section>
 
         </section>
+        <section>
+            <h2 id="contacts">Contacts</h2>
+            <ul>
+                <li><a href="mailto:coder.rms@gmail.com">coder.<strong>rms</strong>@gmail.com</a></li>
+                <li>Github</li>
+                <li>Linked-in</li>
+            </ul>
+        </section>
     </main>
-    <footer>
-        <h2 id="contacts">Contacts</h2>
-        <ul>
-            <li>coder.<strong>rms</strong>@gmail.com</li>
-            <li>Github</li>
-            <li>Linked-in</li>
-        </ul>
-    </footer>
 </body>
 
 </html>
