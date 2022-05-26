@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Renan Stigliani">
     <meta name="description" content="Renan's personal website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="favicon.ico" sizes="any"><!-- 32×32 -->
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -15,6 +16,7 @@
     <style>
         :root {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
 
             --darkest: #0a192f;
             --dark: #112240;
@@ -23,6 +25,9 @@
             --text2: #b9bfc9;
             --muted: #aeb4bd;
             --border-radius: 6px;
+
+            background-color: var(--darkest);
+            color: var(--text2);
         }
 
         * {
@@ -30,18 +35,16 @@
             padding: 0;
         }
 
-        body {
-            background-color: var(--darkest);
-            color: var(--text2);
-            /* font-size: 16px; */
-        }
-
         main {
             margin: 0px auto;
-            width: 100%;
+            padding: 0rem 2rem;
             max-width: 1000px;
+        }
 
-            padding: 0rem 4rem;
+        @media only screen and (min-width: 600px) {
+            main {
+                padding: 0rem 4rem;
+            }
         }
 
         li {
@@ -128,7 +131,6 @@
             display: flex;
             justify-content: space-between;
 
-            font-size: 16px;
             z-index: 1;
         }
 
@@ -181,7 +183,7 @@
         }
 
         h1 {
-            font-size: 500%;
+            font-size: 5em;
         }
 
         h1,
@@ -203,28 +205,26 @@
     <style>
         .cards {
             display: grid;
-            grid-template-columns: 33% 33% 33%;
+            grid-template-columns: 100%;
             grid-row: auto auto;
             grid-column-gap: 20px;
             grid-row-gap: 20px;
         }
 
+        @media only screen and (min-width: 600px) {
+            .cards {
+                grid-template-columns: 33% 33% 33%;
+            }
+        }
+
         .card {
-            /* width: calc(100% -40px);
-            flex: 50%; */
-            padding: 2rem;
-
-            background-color: var(--dark);
-
             position: relative;
-
             top: 0;
-            transition: top ease 0.5s;
-
+            padding: 2rem;
+            background-color: var(--dark);
             color: white;
-
             border-radius: var(--border-radius);
-
+            transition: top ease 0.5s;
         }
 
         .card:hover {
@@ -398,14 +398,16 @@
                 </em>
             </div>
             <p>
-                I am a full-stack software engineer with years of experience in many types of web apps, sound knowledge of .NET & related, modern frameworks, UX and good grasp of AI and Machine Learning.
+                I am a full-stack software engineer with years of experience in many types of web apps, sound knowledge
+                of .NET & related, modern frameworks, UX and good grasp of AI and Machine Learning.
             </p>
             <a href="#contacts" class="button">Contact Me</a>
         </section>
 
         <section>
             <h2 id="projects" style="text-align: center;padding-bottom: 1rem;">Personal Projects</h2>
-            <a style="display: block; text-align: center;padding-bottom: 4rem;">I have a couple other repos on <em>GitHub</em></a>
+            <a style="display: block; text-align: center;padding-bottom: 4rem;">I have a couple other repos on
+                <em>GitHub</em></a>
 
             <div class="cards">
                 <a href="https://fables.ink" target="_blank" class="card">
