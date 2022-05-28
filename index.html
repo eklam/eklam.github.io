@@ -7,15 +7,14 @@
     <meta name="description" content="Renan's personal website.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="favicon.ico" sizes="any"><!-- 32×32 -->
+    <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
     <title>Renan Stigliani</title>
 
-    <!-- Reset -->
     <style>
         :root {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             font-size: 16px;
 
             --darkest: #0a192f;
@@ -37,18 +36,28 @@
 
         main {
             margin: 0px auto;
-            padding: 0rem 2rem;
+            padding: 0 2rem 0 6rem;
             max-width: 1000px;
         }
 
         @media only screen and (min-width: 600px) {
             main {
-                padding: 0rem 4rem;
+                padding: 0 4rem 0 4rem;
             }
         }
 
         li {
             list-style: none;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .d-md-block {
+                display: block;
+            }
         }
 
         main,
@@ -74,7 +83,7 @@
 
         .keywords>span {
             font-size: 80%;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: "Courier New", Courier, monospace;
             padding-right: 0.5rem;
         }
 
@@ -100,14 +109,9 @@
         a:hover {
             cursor: pointer;
         }
-    </style>
 
-    <!-- Hero -->
-    <style>
         .hero {
             min-height: 60vh;
-            display: flex;
-            flex-direction: column;
             justify-content: center;
         }
 
@@ -121,30 +125,162 @@
         }
 
         .hero>p {
-            width: 50%;
             line-height: 150%;
             padding-bottom: 3rem;
         }
-    </style>
 
-    <!-- Nav -->
-    <style>
+        .text-center {
+            text-align: center;
+        }
+
+        .d-block {
+            display: block;
+        }
+
+        .border-box {
+            box-sizing: border-box;
+        }
+
+        .p-1 {
+            padding: 1rem;
+        }
+
+        .p-2 {
+            padding: 2rem;
+        }
+
+        .pb-1 {
+            padding-bottom: 1rem;
+        }
+
+        .pb-2 {
+            padding-bottom: 2rem;
+        }
+
+        .pb-3 {
+            padding-bottom: 3rem;
+        }
+
+        .pb-4 {
+            padding-bottom: 4rem;
+        }
+
+        .pt-1 {
+            padding-top: 1rem;
+        }
+
+        .pt-2 {
+            padding-top: 2rem;
+        }
+
+        .pt-3 {
+            padding-top: 3rem;
+        }
+
+        .pt-4 {
+            padding-top: 4rem;
+        }
+
+        .px-3 {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+
+        .mb-3 {
+            margin-bottom: 3rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 4rem;
+        }
+
+        .w-50 {
+            width: 50%;
+        }
+
+        .w-50 {
+            width: 75%;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .w-md-50 {
+                width: 50%;
+            }
+
+            .w-md-75 {
+                width: 75%;
+            }
+
+            .w-md-100 {
+                width: 100%;
+            }
+
+            .w-md-inherit {
+                width: inherit;
+            }
+        }
+
+        .align-self-end {
+            align-self: end;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .m-auto {
+            margin: auto;
+        }
+
+        .align-items-center {
+            align-items: center;
+        }
+
+        .font-size-08 {
+            font-size: 0.8rem;
+        }
+
+        .font-size-3 {
+            font-size: 3rem;
+        }
+
+        .position-fixed {
+            position: fixed;
+        }
+
         nav {
-            position: sticky;
-            left: 0;
-            right: 0;
-            top: 0;
-
-            padding: 0 4rem;
-
             background-color: var(--darkest);
-
             box-shadow: 0px 0px 200px -10px rgba(0, 0, 0, 0.5);
-
             display: flex;
             justify-content: space-between;
-
+            left: 0;
+            padding: 0 1rem;
+            position: sticky;
+            right: 0;
+            top: 0;
             z-index: 1;
+        }
+
+        @media only screen and (min-width: 600px) {
+            nav {
+                padding: 0 4rem;
+            }
         }
 
         nav a {
@@ -156,27 +292,27 @@
             text-decoration: none;
         }
 
-
         nav>ul,
         nav>a {
             display: flex;
         }
 
-        nav a {
-            padding: 2rem;
-        }
-
         nav>ul {
             flex-shrink: 1;
+            justify-content: space-between;
         }
 
         nav a {
+            padding: 1rem;
             display: inline-block;
         }
-    </style>
 
-    <!-- Elements -->
-    <style>
+        @media only screen and (min-width: 600px) {
+            nav a {
+                padding: 2rem;
+            }
+        }
+
         a {
             text-decoration: none;
         }
@@ -184,7 +320,6 @@
         a:hover {
             text-decoration: underline;
         }
-
 
         h1,
         h2 {
@@ -210,13 +345,13 @@
         }
 
         .button {
-            padding: 1rem;
             background-color: var(--darkest);
-            max-width: 200px;
-            text-align: center;
+            border-radius: var(--border-radius);
             border: 2px solid var(--accent);
             color: var(--accent);
-            border-radius: var(--border-radius);
+            max-width: 200px;
+            padding: 1rem;
+            text-align: center;
         }
 
         .button:hover {
@@ -234,10 +369,7 @@
             box-shadow: 0 10px 30px -15px black;
             top: -6px;
         }
-    </style>
 
-    <!-- Cards -->
-    <style>
         .cards {
             display: grid;
             grid-template-columns: 100%;
@@ -253,10 +385,10 @@
         }
 
         .card {
-            padding: 2rem;
             background-color: var(--dark);
-            color: white;
             border-radius: var(--border-radius);
+            color: white;
+            padding: 2rem;
         }
 
         .card:hover {
@@ -267,12 +399,7 @@
         .card .icons {
             display: flex;
             justify-content: space-between;
-
             padding-bottom: 2rem;
-        }
-
-        .card h3 {
-            margin-bottom: 1rem;
         }
 
         .icon {
@@ -298,10 +425,59 @@
             padding-top: 2rem;
             color: var(--muted);
         }
-    </style>
 
-    <!-- typewriter -->
-    <style>
+        .bg-dark {
+            background-color: var(--dark);
+        }
+
+        #section-contacts {
+            bottom: 0;
+            left: 1rem;
+        }
+
+        #section-contacts .feather {
+            margin: 0.25rem 0.25rem 0.25rem 0;
+            width: 18px;
+            height: 18px;
+        }
+
+        #section-contacts .feather-linkedin {
+            fill: var(--text2);
+            stroke-width: 1px;
+        }
+
+        #section-contacts li a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 0.75rem;
+            border-radius: 2px;
+            /* background-color: var(--text); */
+            background-size: 200% 100%;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, var(--text) 50%);
+            transition: background-position 0.5s;
+        }
+
+        #section-contacts li a span {
+            visibility: hidden;
+        }
+
+        #section-contacts li a:hover span {
+            visibility: visible;
+        }
+
+        #section-contacts li a:hover {
+            background-position: -100% 0;
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        .vr {
+            border-left: 1px solid var(--text2);
+            height: 100px;
+            margin-top: 1rem;
+            margin-left: 1.125rem;
+        }
+
         .typewriter {
             display: flex;
             align-items: center;
@@ -311,34 +487,30 @@
             width: 0;
             max-width: max-content;
             overflow: hidden;
-            border-right: .1em solid;
+            border-right: 0.1em solid;
             border-color: var(--accent);
             /* The typwriter cursor */
             white-space: nowrap;
-            /* Keeps the content on a single line */
-            /* margin: 0;
-            Gives that scrolling effect as the typing happens */
         }
 
         .typing-erase {
-            animation:
-                4s typing-erase 1s steps(50, end),
-                blink-caret .5s step-end infinite;
+            animation: 4s typing-erase 1s steps(50, end),
+                blink-caret 0.5s step-end infinite;
         }
 
         /* The type and erase effect */
         @keyframes typing-erase {
             0% {
-                width: 0
+                width: 0;
             }
 
             80% {
-                width: 100%
+                width: 100%;
             }
 
             90%,
             100% {
-                width: 0
+                width: 0;
             }
         }
 
@@ -347,7 +519,7 @@
 
             from,
             to {
-                border-color: transparent
+                border-color: transparent;
             }
 
             50% {
@@ -392,15 +564,15 @@
 
 <body>
     <nav>
-        <a href="/">Home</a>
-        <ul>
+        <a href="/" class="d-none d-md-block">Home</a>
+        <ul class="w-100 w-md-inherit">
             <li><a href="#projects">Projects</a></li>
             <li><a href="#work">Resume</a></li>
-            <li><a href="#contacts">Contacts</a></li>
+            <li><a href="#contact">Contact Me</a></li>
         </ul>
     </nav>
     <main>
-        <section class="hero">
+        <section class="hero d-flex flex-col w-100 w-md-50">
             <span>Adapt. React. Readapt. Apt.</span>
             <h1>Renan Stigliani</h1>
             <div class="typewriter">
@@ -412,13 +584,12 @@
                 I am a full-stack software engineer with years of experience in many types of web apps, sound knowledge
                 of .NET & related, modern frameworks, UX and good grasp of AI and Machine Learning.
             </p>
-            <a href="#contacts" class="button">Contact Me</a>
+            <a href="#contact" class="button">Contact Me</a>
         </section>
 
         <section>
-            <h2 id="projects" style="text-align: center;padding-bottom: 1rem;">Personal Projects</h2>
-            <a style="display: block; text-align: center;padding-bottom: 4rem;"
-                href="https://github.com/eklam?tab=repositories">
+            <h2 id="projects" class="text-center pb-1">Personal Projects</h2>
+            <a class="d-block text-center pb-4" href="https://github.com/eklam?tab=repositories">
                 I have a couple other repos on <em>GitHub</em>
             </a>
 
@@ -441,7 +612,7 @@
                             </svg>
                         </div>
 
-                        <h3>fables.ink</h3>
+                        <h3 class="mb-1">fables.ink</h3>
                         <p>
                             RPG platform for players to consume materials in an integrated online
                             marketplace.
@@ -472,7 +643,8 @@
                                 <line x1="10" y1="14" x2="21" y2="3"></line>
                             </svg>
                         </div>
-                        <h3>rival.ai</h3>
+
+                        <h3 class="mb-1">rival.ai</h3>
                         <p>
                             Engine aimed to gather real-time information from gaming streams.
                         </p>
@@ -503,7 +675,7 @@
                             </svg>
                         </div>
 
-                        <h3>Traveling Salesman Problem</h3>
+                        <h3 class="mb-1">Traveling Salesman Problem</h3>
                         <p>Thesis project on optimising the famous NP-hard problem.</p>
                         <div class="keywords">
                             <span>Academic</span>
@@ -515,84 +687,57 @@
             </div>
         </section>
 
-        <style>
-            #work {
-                display: flex;
-                flex-direction: column;
-            }
+        <section id="work" class="d-flex flex-col">
+            <h2 class="text-center pb-2">Resume</h2>
 
-            #work>h2 {
-                padding-bottom: 2rem;
-                text-align: center;
-            }
+            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover">
+                <h3>Yangaroo Inc</h3>
 
-            #work>section {
-                padding: 2rem 2rem;
-                width: 75%;
-            }
+                <em>June/2016 - current</em>
 
-            .bg-dark {
-                background-color: var(--dark);
-            }
+                <section>
+                    <h4>Clearance</h4>
+                    <p>
+                        Team lead & principal developer for a new system that controls ads clearance for TV
+                        commercials;
+                        I
+                        on developing a solution on par with established competitors in the field; while at the same
+                        time
+                        overviewing the development process and maintaining software quality.
+                    </p>
+                </section>
 
-            .align-self-end {
-                align-self: end;
-            }
-        </style>
-        <section id="work">
-            <h2>Resume</h2>
+                <section>
+                    <h4>Producers Guild of America (PGA)</h4>
+                    <p>
+                        team lead and principal developer for PGA's revamped Certification and Submission site. The
+                        application unifies several workflows aiming to certify film producers with the Guild's
+                        mark, as
+                        well as redaction and arbitration tools for auditing and reviewing the whole process;
+                    </p>
+                </section>
 
-            <section class="bg-dark  move-hover">
-                <h3>Yangaroo Inc</h4>
+                <section>
+                    <h4>Media Processing and Streaming</h4>
+                    <p>
+                        I redesigned the media processing and streaming pipeline for the award shows.
+                    </p>
+                </section>
 
-                    <em>June/2016 - current</em>
-
-                    <section>
-                        <h4>Clearance</h4>
-                        <p>
-                            Team lead & principal developer for a new system that controls ads clearance for TV
-                            commercials;
-                            I
-                            on developing a solution on par with established competitors in the field; while at the same
-                            time
-                            overviewing the development process and maintaining software quality.
-                        </p>
-                    </section>
-
-                    <section>
-                        <h4>Producers Guild of America (PGA)</h4>
-                        <p>
-                            team lead and principal developer for PGA's revamped Certification and Submission site. The
-                            application unifies several workflows aiming to certify film producers with the Guild's
-                            mark, as
-                            well as redaction and arbitration tools for auditing and reviewing the whole process;
-                        </p>
-                    </section>
-
-                    <section>
-                        <h4>Media Processing and Streaming</h4>
-                        <p>
-                            I redesigned the media processing and streaming pipeline for the award shows.
-                        </p>
-                    </section>
-
-                    <div class="keywords">
-                        <span>API</span>
-                        <span>C#</span>
-                        <span>Service</span>
-                        <span>SQL</span>
-                        <span>Streaming</span>
-                        <span>Transcoding</span>
-                        <span>UX</span>
-                        <span>Web App</span>
-                        <span>Workflow</span>
-                    </div>
+                <div class="keywords">
+                    <span>API</span>
+                    <span>C#</span>
+                    <span>Service</span>
+                    <span>SQL</span>
+                    <span>Streaming</span>
+                    <span>Transcoding</span>
+                    <span>UX</span>
+                    <span>Web App</span>
+                    <span>Workflow</span>
+                </div>
             </section>
 
-            <br />
-            <br />
-
-            <section class="bg-dark align-self-end move-hover">
+            <section class="bg-dark border-box align-self-end w-100 w-md-75 p-2 mb-3 move-hover">
                 <h3>IT Lab</h3>
                 <em>October/2012 to June/2016</em>
                 <section>
@@ -611,17 +756,13 @@
                 <div class="keywords">
                     <span>ASP.NET</span>
                     <span>C#</span>
-                    <span>EF</span>
+                    <span>Entity-Framework</span>
                     <span>SQL Server</span>
                     <span>WCF</span>
                 </div>
-
             </section>
 
-            <br />
-            <br />
-
-            <section class="bg-dark  move-hover">
+            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover">
                 <h3>Education</h3>
                 <section>
                     <h4>FACENS</h4>
@@ -644,99 +785,24 @@
                 </section>
 
             </section>
-
-            <br />
-            <br />
         </section>
 
-        <style>
-            #in-touch {
-                display: flex;
-                flex-direction: column;
-                margin: auto;
-                text-align: center;
-                width: 50%;
-                align-items: center;
-            }
-
-            #in-touch h3 {
-                font-size: 3rem;
-            }
-
-            #in-touch h3,
-            #in-touch p {
-                padding-bottom: 2rem;
-            }
-
-            .px-3 {
-                padding-left: 3rem;
-                padding-right: 3rem;
-            }
-        </style>
-        <section id="in-touch">
-            <h3>Get In Touch</h3>
-            <p>
+        <section class="d-flex flex-col align-items-center m-auto text-center w-100 w-md-50 pb-4">
+            <h3 id="contact" class="font-size-3 pb-2">Get In Touch</h3>
+            <p class="pb-2">
                 Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you have
                 a question or just want to say hi, I'll try my best to get back to you!
             </p>
-            <a  href="mailto:coder.rms@gmail.com" class="button px-3">Say Hello</a>
+            <a href="mailto:coder.rms@gmail.com" class="button px-3">Say Hello</a>
         </section>
-
         <br />
         <br />
         <br />
         <br />
-        <br />
-        <br />
+        <p class="font-size-08 text-center pb-2">© 2022 | Created by Renan Stigliani</p>
     </main>
 
-    <style>
-        #section-contacts {
-            position: fixed;
-            bottom: 0;
-            left: 1rem;
-        }
-
-        #section-contacts .feather {
-            margin: 0.25rem 0.25rem 0.25rem 0;
-            width: 18px;
-            height: 18px;
-        }
-
-        #section-contacts .feather-linkedin {
-            fill: var(--text2);
-            stroke-width: 1px;
-        }
-
-        #section-contacts li a {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 0.75rem;
-            border-radius: 2px;
-        }
-
-        #section-contacts li a span {
-            visibility: hidden;
-        }
-
-        #section-contacts li a:hover span {
-            visibility: visible;
-        }
-
-        #section-contacts li a:hover {
-            background-color: var(--text);
-            color: var(--dark);
-            text-decoration: none;
-        }
-
-        .vr {
-            border-left: 1px solid var(--text2);
-            height: 100px;
-            margin-top: 1rem;
-            margin-left: 1.125rem;
-        }
-    </style>
-    <div id="section-contacts">
+    <div id="section-contacts" class="position-fixed">
         <ul>
             <li>
                 <a href="mailto:coder.rms@gmail.com" aria-label="email">
