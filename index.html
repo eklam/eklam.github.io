@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -9,528 +9,12 @@
 
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="index.css" type="text/css">
 
     <title>Renan Stigliani</title>
 
-    <style>
-        :root {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 16px;
-
-            --darkest: #0a192f;
-            --dark: #112240;
-            --accent: #ffd034;
-            --text: #f3f8ff;
-            --text2: #b9bfc9;
-            --muted: #aeb4bd;
-            --border-radius: 6px;
-
-            background-color: var(--darkest);
-            color: var(--text2);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        main {
-            margin: 0px auto;
-            padding: 0 2rem 0 4.5rem;
-            max-width: 1000px;
-        }
-
-        @media only screen and (min-width: 600px) {
-            main {
-                padding: 0 4rem 0 4rem;
-            }
-        }
-
-        li {
-            list-style: none;
-        }
-
-        .d-none {
-            display: none;
-        }
-
-        @media only screen and (min-width: 600px) {
-            .d-md-block {
-                display: block;
-            }
-        }
-
-        main,
-        footer {
-            background-color: var(--darkest);
-        }
-
-        main>section {
-            margin-bottom: 16rem;
-        }
-
-        main>section:last-child {
-            margin-bottom: 6rem;
-        }
-
-        main>section:first-child {
-            padding-top: 2rem;
-        }
-
-        section>section {
-            padding-top: 1rem;
-        }
-
-        .keywords>span {
-            font-size: 80%;
-            font-family: "Courier New", Courier, monospace;
-            padding-right: 0.5rem;
-        }
-
-        .list>li {
-            list-style: none;
-            margin-left: 0.75rem;
-            padding-left: 0.25rem;
-        }
-
-        .list>li::marker {
-            /* content: "◥"; */
-            /* content: "▷"; */
-            content: "⏵";
-            /* content: "▹"; */
-            /* content: "⯈"; */
-            font-size: 1rem;
-        }
-
-        a {
-            color: var(--text2);
-        }
-
-        a:hover {
-            cursor: pointer;
-        }
-
-        .hero {
-            min-height: 60vh;
-            justify-content: center;
-        }
-
-        .hero>span {
-            font-size: 200%;
-            color: var(--muted);
-        }
-
-        .hero>h1 {
-            margin-left: -6px;
-        }
-
-        .hero>p {
-            line-height: 150%;
-            padding-bottom: 3rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .d-block {
-            display: block;
-        }
-
-        .border-box {
-            box-sizing: border-box;
-        }
-
-        .p-1 {
-            padding: 1rem;
-        }
-
-        .p-2 {
-            padding: 2rem;
-        }
-
-        .pb-1 {
-            padding-bottom: 1rem;
-        }
-
-        .pb-2 {
-            padding-bottom: 2rem;
-        }
-
-        .pb-3 {
-            padding-bottom: 3rem;
-        }
-
-        .pb-4 {
-            padding-bottom: 4rem;
-        }
-
-        .pt-1 {
-            padding-top: 1rem;
-        }
-
-        .pt-2 {
-            padding-top: 2rem;
-        }
-
-        .pt-3 {
-            padding-top: 3rem;
-        }
-
-        .pt-4 {
-            padding-top: 4rem;
-        }
-
-        .px-3 {
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-
-        .mb-1 {
-            margin-bottom: 1rem;
-        }
-
-        .mb-2 {
-            margin-bottom: 2rem;
-        }
-
-        .mb-3 {
-            margin-bottom: 3rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 4rem;
-        }
-
-        .w-50 {
-            width: 50%;
-        }
-
-        .w-50 {
-            width: 75%;
-        }
-
-        .w-100 {
-            width: 100%;
-        }
-
-        @media only screen and (min-width: 600px) {
-            .w-md-50 {
-                width: 50%;
-            }
-
-            .w-md-75 {
-                width: 75%;
-            }
-
-            .w-md-100 {
-                width: 100%;
-            }
-
-            .w-md-inherit {
-                width: inherit;
-            }
-        }
-
-        .align-self-end {
-            align-self: end;
-        }
-
-        .d-flex {
-            display: flex;
-        }
-
-        .flex-col {
-            flex-direction: column;
-        }
-
-        .m-auto {
-            margin: auto;
-        }
-
-        .align-items-center {
-            align-items: center;
-        }
-
-        .font-size-08 {
-            font-size: 0.8rem;
-        }
-
-        .font-size-3 {
-            font-size: 3rem;
-        }
-
-        .position-fixed {
-            position: fixed;
-        }
-
-        nav {
-            background-color: var(--darkest);
-            box-shadow: 0px 0px 200px -10px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
-            left: 0;
-            padding: 0 1rem;
-            position: sticky;
-            right: 0;
-            top: 0;
-            z-index: 1;
-        }
-
-        @media only screen and (min-width: 600px) {
-            nav {
-                padding: 0 4rem;
-            }
-        }
-
-        nav a {
-            color: var(--accent);
-        }
-
-        nav a:hover {
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        nav>ul,
-        nav>a {
-            display: flex;
-        }
-
-        nav>ul {
-            flex-shrink: 1;
-            justify-content: space-between;
-        }
-
-        nav a {
-            padding: 1rem;
-            display: inline-block;
-        }
-
-        @media only screen and (min-width: 600px) {
-            nav a {
-                padding: 2rem;
-            }
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        h1,
-        h2 {
-            letter-spacing: 2px;
-        }
-
-        h1 {
-            font-size: 4em;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--text);
-        }
-
-        em {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .button {
-            background-color: var(--darkest);
-            border-radius: var(--border-radius);
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            max-width: 200px;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .button:hover {
-            background-color: var(--dark);
-            text-decoration: none;
-        }
-
-        .move-hover {
-            position: relative;
-            top: 0;
-            transition: top ease 0.5s;
-        }
-
-        .move-hover:hover {
-            box-shadow: 0 10px 30px -15px black;
-            top: -6px;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: 100%;
-            grid-row: auto auto;
-            grid-column-gap: 20px;
-            grid-row-gap: 20px;
-        }
-
-        @media only screen and (min-width: 600px) {
-            .cards {
-                grid-template-columns: 33% 33% 33%;
-            }
-        }
-
-        .card {
-            background-color: var(--dark);
-            border-radius: var(--border-radius);
-            color: white;
-            padding: 2rem;
-        }
-
-        .card:hover {
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .card .icons {
-            display: flex;
-            justify-content: space-between;
-            padding-bottom: 2rem;
-        }
-
-        .icon {
-            color: var(--accent);
-            height: 36px;
-            width: 36px;
-            stroke-width: 1px;
-        }
-
-        .icon-xs {
-            color: var(--muted);
-            height: 18px;
-            width: 18px;
-            margin-left: 6px;
-        }
-
-        .cards .feather-github {
-            height: 16px;
-            width: 16px;
-        }
-
-        .keywords {
-            padding-top: 2rem;
-            color: var(--muted);
-        }
-
-        .bg-dark {
-            background-color: var(--dark);
-        }
-
-        #section-contacts {
-            bottom: 0;
-            left: 1rem;
-        }
-
-        #section-contacts .feather {
-            margin: 0.25rem 0.25rem 0.25rem 0;
-            width: 18px;
-            height: 18px;
-        }
-
-        #section-contacts .feather-linkedin {
-            fill: var(--text2);
-            stroke-width: 1px;
-        }
-
-        #section-contacts li a {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 0.75rem;
-            border-radius: 2px;
-            background-size: 201% 100%;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, var(--text) 50%);
-            transition: background-position 0.5s;
-        }
-
-        #section-contacts li a span {
-            visibility: hidden;
-        }
-
-        #section-contacts li a:hover span {
-            visibility: visible;
-        }
-
-        #section-contacts li a:hover {
-            background-position: -100% 0;
-            color: var(--dark);
-            text-decoration: none;
-        }
-
-        .vr {
-            border-left: 1px solid var(--text2);
-            height: 100px;
-            margin-top: 1rem;
-            margin-left: 1.125rem;
-        }
-
-        .typewriter {
-            display: flex;
-            align-items: center;
-        }
-
-        .typewriter em {
-            width: 0;
-            max-width: max-content;
-            overflow: hidden;
-            border-right: 0.1em solid;
-            border-color: var(--accent);
-            /* The typwriter cursor */
-            white-space: nowrap;
-        }
-
-        .typing-erase {
-            animation: 4s typing-erase 1s steps(50, end),
-                blink-caret 0.5s step-end infinite;
-        }
-
-        /* The type and erase effect */
-        @keyframes typing-erase {
-            0% {
-                width: 0;
-            }
-
-            80% {
-                width: 100%;
-            }
-
-            90%,
-            100% {
-                width: 0;
-            }
-        }
-
-        /* The typewriter cursor effect */
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: var(--accent);
-            }
-        }
-    </style>
-
     <script defer>
         window.onload = function () {
-            var messages = ["message1", "message2  message2 message2", "message3 message3"];
-
             [...document.getElementsByClassName("typing-erase")].forEach((element) => {
                 element.onanimationend = changeTxt;
             });
@@ -547,9 +31,6 @@
 
                 element.innerHTML = messages[rank];
 
-                // adjust the speed (3.5 is the original speed, 20 is the original string length
-                // var speed = 3.5 * messages[rank].length / 20;
-
                 setTimeout(() => {
                     // switch to the original set of animation      
                     element.style.animation = '';
@@ -557,6 +38,96 @@
 
                 element.dataset.rank = rank;
             }
+
+            document.getElementById('say-hello').addEventListener('click', function () {
+                document.getElementById('say-hello-email').classList.toggle('d-none');
+            })
+
+            function randomIntFromInterval(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min)
+            }
+
+            for (const element of document.getElementsByClassName('random-hover')) {
+                element.addEventListener('mouseover', function () {
+                    const rnd = randomIntFromInterval(1, 4);
+                    element.classList.toggle('random-' + rnd);
+                })
+                element.addEventListener('mouseout', function () {
+                    element.classList.remove('random-1');
+                    element.classList.remove('random-2');
+                    element.classList.remove('random-3');
+                    element.classList.remove('random-4');
+                })
+            }
+
+            class ClipboardCopier {
+                constructor(copySelector, toastElementId, toastDelay) {
+                    this.copyElements = document.querySelectorAll(copySelector);
+                    this.toastElement = document.getElementById(toastElementId);
+                    this.toastDelay = toastDelay;
+                }
+
+                init() {
+                    this.copyElements.forEach(element => {
+                        element.addEventListener('click', () => this.copyToClipboard(element));
+                    });
+                }
+
+                copyToClipboard(element) {
+                    const text = element.getAttribute('data-copy');
+                    const input = document.createElement('input');
+                    input.setAttribute('value', text);
+                    document.body.appendChild(input);
+                    input.select();
+                    const result = document.execCommand('copy');
+                    document.body.removeChild(input);
+                    if (result) {
+                        this.showToast("Copied to clipboard");
+                    }
+                }
+
+                showToast(text) {
+                    this.toastElement.classList.add("show");
+                    this.toastElement.innerHTML = text;
+
+                    setTimeout(() => {
+                        this.toastElement.classList.remove("show");
+                    }, this.toastDelay);
+                }
+            }
+
+            // Instantiate and initialize the ClipboardCopier
+            const clipboardCopier = new ClipboardCopier('[data-copy]', 'snackbar', 2000);
+            clipboardCopier.init();
+
+            class ThemeToggler {
+                constructor(themeTogglerId, moonIconId, sunIconId) {
+                    this.themeTogglerElement = document.getElementById(themeTogglerId);
+                    this.moonIcon = document.getElementById(moonIconId);
+                    this.sunIcon = document.getElementById(sunIconId);
+                }
+
+                init() {
+                    this.themeTogglerElement.addEventListener('click', () => this.toggleTheme());
+
+                    // Set the initial theme based on the user's system preference
+                    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.setAttribute('data-theme', userPrefersDark ? 'dark' : 'light');
+                    this.toggleTheme();
+                }
+
+                toggleTheme() {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    this.moonIcon.style.display = newTheme === 'dark' ? 'none' : 'inline';
+                    this.sunIcon.style.display = newTheme === 'dark' ? 'inline' : 'none';
+                    this.themeTogglerElement.title = newTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+                }
+            }
+
+            const themeToggler = new ThemeToggler('theme-toggler', 'moon-icon', 'sun-icon');
+            themeToggler.init();
         }
     </script>
 </head>
@@ -568,6 +139,30 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#work">Resume</a></li>
             <li><a href="#contact">Contact Me</a></li>
+            <li><a id="theme-toggler">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" id="moon-icon">
+                        <g fill="none" fill-rule="evenodd" transform="translate(-440 -200)">
+                            <path fill="currentColor" fill-rule="nonzero" stroke="currentColor" stroke-width="0.5"
+                                d="M102,21 C102,18.1017141 103.307179,15.4198295 105.51735,13.6246624 C106.001939,13.2310647 105.821611,12.4522936 105.21334,12.3117518 C104.322006,12.1058078 103.414758,12 102.5,12 C95.8722864,12 90.5,17.3722864 90.5,24 C90.5,30.6277136 95.8722864,36 102.5,36 C106.090868,36 109.423902,34.4109093 111.690274,31.7128995 C112.091837,31.2348572 111.767653,30.5041211 111.143759,30.4810139 C106.047479,30.2922628 102,26.1097349 102,21 Z M102.5,34.5 C96.7007136,34.5 92,29.7992864 92,24 C92,18.2007136 96.7007136,13.5 102.5,13.5 C102.807386,13.5 103.113925,13.5136793 103.419249,13.5407785 C101.566047,15.5446378 100.5,18.185162 100.5,21 C100.5,26.3198526 104.287549,30.7714322 109.339814,31.7756638 L109.516565,31.8092927 C107.615276,33.5209452 105.138081,34.5 102.5,34.5 Z"
+                                transform="translate(354.5 192)"></path>
+                            <polygon points="444 228 468 228 468 204 444 204"></polygon>
+                        </g>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" id="sun-icon">
+                        <g fill="none" fill-rule="evenodd" transform="translate(-442 -200)">
+                            <g fill="currentColor" transform="translate(356 144)">
+                                <path fill-rule="nonzero"
+                                    d="M108.5 24C108.5 27.5902136 105.590214 30.5 102 30.5 98.4097864 30.5 95.5 27.5902136 95.5 24 95.5 20.4097864 98.4097864 17.5 102 17.5 105.590214 17.5 108.5 20.4097864 108.5 24zM107 24C107 21.2382136 104.761786 19 102 19 99.2382136 19 97 21.2382136 97 24 97 26.7617864 99.2382136 29 102 29 104.761786 29 107 26.7617864 107 24zM101 12.75L101 14.75C101 15.1642136 101.335786 15.5 101.75 15.5 102.164214 15.5 102.5 15.1642136 102.5 14.75L102.5 12.75C102.5 12.3357864 102.164214 12 101.75 12 101.335786 12 101 12.3357864 101 12.75zM95.7255165 14.6323616L96.7485165 16.4038616C96.9556573 16.7625614 97.4143618 16.8854243 97.7730616 16.6782835 98.1317614 16.4711427 98.2546243 16.0124382 98.0474835 15.6537384L97.0244835 13.8822384C96.8173427 13.5235386 96.3586382 13.4006757 95.9999384 13.6078165 95.6412386 13.8149573 95.5183757 14.2736618 95.7255165 14.6323616zM91.8822384 19.0244835L93.6537384 20.0474835C94.0124382 20.2546243 94.4711427 20.1317614 94.6782835 19.7730616 94.8854243 19.4143618 94.7625614 18.9556573 94.4038616 18.7485165L92.6323616 17.7255165C92.2736618 17.5183757 91.8149573 17.6412386 91.6078165 17.9999384 91.4006757 18.3586382 91.5235386 18.8173427 91.8822384 19.0244835zM90.75 25L92.75 25C93.1642136 25 93.5 24.6642136 93.5 24.25 93.5 23.8357864 93.1642136 23.5 92.75 23.5L90.75 23.5C90.3357864 23.5 90 23.8357864 90 24.25 90 24.6642136 90.3357864 25 90.75 25zM92.6323616 30.2744835L94.4038616 29.2514835C94.7625614 29.0443427 94.8854243 28.5856382 94.6782835 28.2269384 94.4711427 27.8682386 94.0124382 27.7453757 93.6537384 27.9525165L91.8822384 28.9755165C91.5235386 29.1826573 91.4006757 29.6413618 91.6078165 30.0000616 91.8149573 30.3587614 92.2736618 30.4816243 92.6323616 30.2744835zM97.0244835 34.1177616L98.0474835 32.3462616C98.2546243 31.9875618 98.1317614 31.5288573 97.7730616 31.3217165 97.4143618 31.1145757 96.9556573 31.2374386 96.7485165 31.5961384L95.7255165 33.3676384C95.5183757 33.7263382 95.6412386 34.1850427 95.9999384 34.3921835 96.3586382 34.5993243 96.8173427 34.4764614 97.0244835 34.1177616zM103 35.25L103 33.25C103 32.8357864 102.664214 32.5 102.25 32.5 101.835786 32.5 101.5 32.8357864 101.5 33.25L101.5 35.25C101.5 35.6642136 101.835786 36 102.25 36 102.664214 36 103 35.6642136 103 35.25zM108.274483 33.3676384L107.251483 31.5961384C107.044343 31.2374386 106.585638 31.1145757 106.226938 31.3217165 105.868239 31.5288573 105.745376 31.9875618 105.952517 32.3462616L106.975517 34.1177616C107.182657 34.4764614 107.641362 34.5993243 108.000062 34.3921835 108.358761 34.1850427 108.481624 33.7263382 108.274483 33.3676384zM112.117762 28.9755165L110.346262 27.9525165C109.987562 27.7453757 109.528857 27.8682386 109.321717 28.2269384 109.114576 28.5856382 109.237439 29.0443427 109.596138 29.2514835L111.367638 30.2744835C111.726338 30.4816243 112.185043 30.3587614 112.392183 30.0000616 112.599324 29.6413618 112.476461 29.1826573 112.117762 28.9755165zM113.25 23L111.25 23C110.835786 23 110.5 23.3357864 110.5 23.75 110.5 24.1642136 110.835786 24.5 111.25 24.5L113.25 24.5C113.664214 24.5 114 24.1642136 114 23.75 114 23.3357864 113.664214 23 113.25 23zM111.367638 17.7255165L109.596138 18.7485165C109.237439 18.9556573 109.114576 19.4143618 109.321717 19.7730616 109.528857 20.1317614 109.987562 20.2546243 110.346262 20.0474835L112.117762 19.0244835C112.476461 18.8173427 112.599324 18.3586382 112.392183 17.9999384 112.185043 17.6412386 111.726338 17.5183757 111.367638 17.7255165zM106.975517 13.8822384L105.952517 15.6537384C105.745376 16.0124382 105.868239 16.4711427 106.226938 16.6782835 106.585638 16.8854243 107.044343 16.7625614 107.251483 16.4038616L108.274483 14.6323616C108.481624 14.2736618 108.358761 13.8149573 108.000062 13.6078165 107.641362 13.4006757 107.182657 13.5235386 106.975517 13.8822384z"
+                                    transform="translate(0 48)" stroke="currentColor" stroke-width="0.25"></path>
+                                <path
+                                    d="M98.6123,60.1372 C98.6123,59.3552 98.8753,58.6427 99.3368,58.0942 C99.5293,57.8657 99.3933,57.5092 99.0943,57.5017 C99.0793,57.5012 99.0633,57.5007 99.0483,57.5007 C97.1578,57.4747 95.5418,59.0312 95.5008,60.9217 C95.4578,62.8907 97.0408,64.5002 98.9998,64.5002 C99.7793,64.5002 100.4983,64.2452 101.0798,63.8142 C101.3183,63.6372 101.2358,63.2627 100.9478,63.1897 C99.5923,62.8457 98.6123,61.6072 98.6123,60.1372"
+                                    transform="translate(3 11)"></path>
+                            </g>
+                            <polygon points="444 228 468 228 468 204 444 204"></polygon>
+                        </g>
+                    </svg>
+                </a>
+            </li>
         </ul>
     </nav>
     <main>
@@ -583,17 +178,18 @@
                 I am a full-stack software engineer with years of experience in many types of web apps, sound knowledge
                 of .NET & related, modern frameworks, UX and good grasp of AI and Machine Learning.
             </p>
-            <a href="#contact" class="button">Contact Me</a>
+            <a href="#contact" class="button bg-2 shadow random-hover">Contact Me</a>
         </section>
 
         <section>
-            <h2 id="projects" class="text-center pb-1">Personal Projects</h2>
+            <h2 id="projects" class="text-center pb-1 font-size-2">Personal Projects</h2>
             <a class="d-block text-center pb-4" href="https://github.com/eklam?tab=repositories">
-                I have a couple other repos on <em>GitHub</em>
+                I have a couple other repos on <b>GitHub</b>
             </a>
 
             <div class="cards">
-                <a href="https://fables.ink" target="_blank" class="card move-hover" aria-label="fables.ink">
+                <a href="https://fables.ink" target="_blank" class="card move-hover border-squared shadow"
+                    aria-label="fables.ink">
                     <section>
                         <div class="icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -625,7 +221,8 @@
                         </div>
                     </section>
                 </a>
-                <a href="https://rival.ai" target="_blank" class="card move-hover" aria-label="rival.ai">
+                <a href="https://rival.ai" target="_blank" class="card move-hover border-squared shadow"
+                    aria-label="rival.ai">
                     <section>
                         <div class="icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -655,8 +252,8 @@
                         </div>
                     </section>
                 </a>
-                <a class="card move-hover" aria-label="Traveling Salesman Problem"
-                    href="https://github.com/eklam?tab=repositories">
+                <a href="https://github.com/eklam?tab=repositories" class="card move-hover border-squared shadow"
+                    aria-label="Traveling Salesman Problem">
                     <section>
                         <div class="icons">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -687,9 +284,9 @@
         </section>
 
         <section id="work" class="d-flex flex-col">
-            <h2 class="text-center pb-2">Resume</h2>
+            <h2 class="text-center pb-2 font-size-2">Resume</h2>
 
-            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover">
+            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover border-squared shadow">
                 <h3>Yangaroo Inc</h3>
 
                 <em>June/2016 - current</em>
@@ -699,9 +296,10 @@
                     <p>
                         Team lead & principal developer for a new system that controls ads clearance for TV
                         commercials;
-                        I designed the solution from the ground-up, making sure it’s on par with established competitor
-                        while also adding novel features. In the lead position I overview the development process and
-                        maintain software quality.
+                        I
+                        on developing a solution on par with established competitors in the field; while at the same
+                        time
+                        overviewing the development process and maintaining software quality.
                     </p>
                 </section>
 
@@ -735,7 +333,7 @@
                 </div>
             </section>
 
-            <section class="bg-dark border-box align-self-end w-100 w-md-75 p-2 mb-3 move-hover">
+            <section class="bg-dark border-box align-self-end w-100 w-md-75 p-2 mb-3 move-hover border-squared shadow">
                 <h3>IT Lab</h3>
                 <em>October/2012 to June/2016</em>
                 <section>
@@ -760,7 +358,7 @@
                 </div>
             </section>
 
-            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover">
+            <section class="bg-dark border-box w-100 w-md-75 p-2 mb-3 move-hover border-squared shadow">
                 <h3>Education</h3>
                 <section>
                     <h4>FACENS</h4>
@@ -785,24 +383,32 @@
             </section>
         </section>
 
-        <section class="d-flex flex-col align-items-center m-auto text-center w-100 w-md-50 pb-4">
+        <section class="d-flex flex-col align-items-center mx-auto text-center w-100 w-md-50 mb-8">
             <h3 id="contact" class="font-size-3 pb-2">Get In Touch</h3>
             <p class="pb-2">
-                I'm not actively looking for new opportunities right now, but if you have any questions or just want to chat, feel free to hit me up. I'll try my best to get back to you!
+                I'm not actively looking for new opportunities right now, but if you have any questions or just want to
+                chat, feel free to hit me up. I'll try my best to get back to you!
             </p>
-            <a href="mailto:renansti.dev@gmail.com" class="button px-3">Say Hello</a>
+            <button id="say-hello" type="button" class="button bg-3 px-3 shadow random-hover">Say Hello</button>
+            <p id="say-hello-email" class="p-1 d-flex align-items-center d-none">
+                <a id="email" href="mailto:coder.rms@gmail.com">coder.<b>rms</b>@gmail.com</a>
+                <button type="button" class="button-icon" data-copy="coder.rms@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-clipboard icon-xs">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                    </svg>
+                </button>
+            </p>
         </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <p class="font-size-08 text-center pb-2">© 2022 | Created by Renan Stigliani</p>
+        <p class="font-size-08 text-center pb-2">© 2023 | Created by Renan Stigliani</p>
     </main>
 
-    <div id="section-contacts" class="position-fixed">
+    <div id="ssection-contacts" class="position-fixed">
         <ul>
             <li>
-                <a href="mailto:renansti.dev@gmail.com" aria-label="email">
+                <a href="mailto:coder.rms@gmail.com" aria-label="email" class="button bg-1 shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-mail">
@@ -810,11 +416,11 @@
                         </path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
-                    <span><strong>renansti.dev</strong>@gmail.com</span>
+                    <span>coder.<strong>rms</strong>@gmail.com</span>
                 </a>
             </li>
             <li>
-                <a href="https://github.com/eklam" target="_blank" aria-label="GitHub">
+                <a href="https://github.com/eklam" target="_blank" aria-label="GitHub" class="button bg-4 shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-github icon-xs">
@@ -826,7 +432,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://www.linkedin.com/in/rmalke" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/rmalke" target="_blank" aria-label="LinkedIn"
+                    class="button bg-3 shadow">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-linkedin">
@@ -842,6 +449,7 @@
         <div class="vr"></div>
     </div>
 
+    <div id="snackbar" class="border-squared shadow"></div>
 </body>
 
 </html>
