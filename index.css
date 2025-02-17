@@ -28,7 +28,7 @@
 
     --shadow: #1a1a1a;
     --accent: #f0f0f0;
-    --accent-1: #3dbb70;
+    --accent-1: #e668e2;
     --accent-2: #e03030;
     --accent-3: #358ebd;
     --accent-4: #e0b23d;
@@ -464,11 +464,15 @@ nav>ul {
 .move-hover {
     position: relative;
     top: 0;
-    transition: top ease 0.5s;
+    transition: top 0.5s ease, box-shadow 0.5s ease;
 }
 
 .move-hover:hover {
     top: -6px;
+}
+
+.move-hover.shadow:hover {
+    box-shadow: 12px 12px 0 0px var(--shadow);
 }
 
 .border-squared {
@@ -527,11 +531,17 @@ nav>ul {
 }
 
 #ssection-contacts li a span {
-    display: none;
+    /* display: none; */
+    transition: max-width 0.5s ease, opacity 0.5s ease;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
 }
 
 #ssection-contacts li a:hover span {
-    display: inline-block;
+    /* display: inline-block; */
+    max-width: 200px;
+    opacity: 1;
 }
 
 .vr {
